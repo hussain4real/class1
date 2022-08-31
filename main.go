@@ -33,6 +33,27 @@ func main() {
 		"nov",
 		"dec",
 	}
-	allMonth := months[4:]
-	fmt.Printf("this is all the month: %v", allMonth)
+	allMonth := months[:]
+
+	fmt.Printf("this is all the month: %v\n", allMonth)
+
+	allMonth = append(allMonth, "hello")
+	fmt.Println(allMonth)
+
+	//deep copy example
+	newMonth := make([]string, len(allMonth))
+	copy(newMonth, allMonth)
+	fmt.Println(newMonth)
+
+	//shallow copy example
+	items := []string{"phones", "chargers"}
+	copyItems := items
+
+	fmt.Printf("address of items is: %[1]p \n", items)
+	fmt.Printf("address of items is: %[1]p \n", copyItems)
+
+	copyItems = append(copyItems, "comb")
+
+	fmt.Println(items)
+	fmt.Println(copyItems)
 }
