@@ -28,7 +28,7 @@ func main() {
 	fmt.Println(kobo.naira())
 }
 
-func _main() {
+func printOut() {
 	printMyGithubName("hussain4real\n")
 
 	var months []string
