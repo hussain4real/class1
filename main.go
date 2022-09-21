@@ -8,7 +8,27 @@ func printMyGithubName(githubName string) {
 	fmt.Println(githubName)
 }
 
+// example of pointers
+//func pointer() {
+//	var four int = 4
+//	addressOfFour := &four
+//	fmt.Printf("this is a pointer of: %v", addressOfFour)
+//}
+
+type naira float32
+
+type kobo float32
+
+func (k kobo) naira() naira {
+	return naira(k / 100)
+}
+
 func main() {
+	kobo := kobo(100)
+	fmt.Println(kobo.naira())
+}
+
+func _main() {
 	printMyGithubName("hussain4real\n")
 
 	var months []string
@@ -56,4 +76,8 @@ func main() {
 
 	fmt.Println(items)
 	fmt.Println(copyItems)
+
+	for c := 0; c <= 10; c++ {
+		fmt.Printf("c is:%v \n", c)
+	}
 }
